@@ -47,8 +47,8 @@ android {
         buildConfigField('String', 'API_KEY_OPEN_EXCHANGE_RATES', ApiKey_OpenExchangeRates)
     }
     compileOptions {
-        sourceCompatibility JavaVersion.VERSION_17
-        targetCompatibility JavaVersion.VERSION_17
+        sourceCompatibility JavaVersion.VERSION_21
+        targetCompatibility JavaVersion.VERSION_21
     }
     signingConfigs {
         release {

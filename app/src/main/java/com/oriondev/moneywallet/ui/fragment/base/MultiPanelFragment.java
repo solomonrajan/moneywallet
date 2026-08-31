@@ -107,6 +107,9 @@ public abstract class MultiPanelFragment extends Fragment implements MultiPanelC
         onConfigureRootLayout(inflater, container, savedInstanceState);
         setupPrimaryToolbar(mPrimaryToolbar);
         setupPanelVisibility(savedInstanceState);
+        if (getActivity() instanceof ThemedActivity) {
+            ((ThemedActivity) getActivity()).applySystemBarInsets();
+        }
         return view;
     }
 
