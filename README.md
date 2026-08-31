@@ -13,6 +13,11 @@
 
 **Cash Ledger** is a private, offline-first expense and budget manager for Android. Take full control of your personal finances with multiple wallets, custom categories, smart budgets, recurring transactions, multi-currency support, detailed reports, and biometric security — with zero accounts, no tracking, and complete data ownership.
 
+> [!TIP]
+> ### ☕ 🎨 **A Note on This Project: Vibe Coding & Hobby Space**
+> Hey there! 👋 This repository is a personal **hobby and vibe coding project**.  
+> If I make any dumb moves, silly edits, or questionable commits that make you laugh or facepalm 😅 — kindly forgive me, I'm new to this and learning along the way! If possible, feel free to guide me with tips, advice, and constructive feedback. 🚀💡
+
 ---
 
 ## 📑 Table of Contents
