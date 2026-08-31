@@ -11,7 +11,9 @@
   <img src="https://img.shields.io/badge/Platform-Android%2015%20(API%2035)-green?style=for-the-badge&logo=android" alt="Android 15 (API 35)" />
 </p>
 
-**Cash Ledger** is a private, offline-first expense and budget manager for Android. Take full control of your personal finances with multiple wallets, custom categories, smart budgets, recurring transactions, multi-currency support, detailed reports, and biometric security — with zero accounts, no tracking, and complete data ownership.
+<p align="justify">
+  <b>Cash Ledger</b> is a private, offline-first expense and budget manager for Android. Take full control of your personal finances with multiple wallets, custom categories, smart budgets, recurring transactions, multi-currency support, detailed reports, and biometric security — with zero accounts, no tracking, and complete data ownership.
+</p>
 
 > [!TIP]
 > ### ☕ 🎨 **A Note on This Project: Vibe Coding & Hobby Space**
@@ -136,9 +138,9 @@ A row the importer cannot read stops the process before saving, clearly naming t
 - 📌 **Current Version**: **`1.0.1`**
 - 🌟 **Recent Updates in `v1.0.1` (vs `v1.0.0`)**:
   - **Android 15 Base Compatibility**: Upgraded `minSdk` to 35, aligning base and target platforms with Android 15.
-  - **Universal Edge-to-Edge**: Enabled edge-to-edge drawing across all 39 app screens and tutorial intro with transparent system bars.
-  - **Safe Area Insets & Dynamic Scrim**: Applied content insets and reactive top status bar scrim to prevent UI overlaps and improve visual hierarchy.
-  - **Adaptive Icon Contrast**: Added light and dark icon appearance switching matching theme primary colors.
+  - **Universal Edge-to-Edge**: Enabled 100% transparent edge-to-edge drawing across all app screens, secondary panels, and tutorial intros.
+  - **Removed Legacy Scrims**: Eliminated unwanted opaque system overlays and gradient scrims on status and gesture navigation bars for a true immersive layout.
+  - **Safe Area Insets**: Applied unified dynamic content insets to prevent UI overlaps with system bars across single and multi-panel layouts.
   - **Community & Vibe Coding Note**: Added friendly open-source disclaimer and invitation for feedback.
 - 🎯 **Roadmap**: Open features and proposals are tracked in [Roadmap Issue #15](https://github.com/herrerad85/moneywallet/issues/15).
 
