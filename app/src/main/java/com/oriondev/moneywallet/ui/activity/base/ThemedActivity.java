@@ -205,6 +205,14 @@ public abstract class ThemedActivity extends AppCompatActivity implements ThemeE
                 view.setPadding(left, top, right, bottom);
             }
 
+            View secondaryAppBar = findViewById(R.id.header_secondary_panel_layout);
+            if (secondaryAppBar == null) {
+                secondaryAppBar = findViewById(R.id.secondary_toolbar);
+            }
+            if (secondaryAppBar != null) {
+                secondaryAppBar.setPadding(secondaryAppBar.getPaddingLeft(), top, secondaryAppBar.getPaddingRight(), secondaryAppBar.getPaddingBottom());
+            }
+
             View fab = findViewById(R.id.floating_action_button);
             if (fab != null && fab.getLayoutParams() instanceof ViewGroup.MarginLayoutParams) {
                 ViewGroup.MarginLayoutParams lp = (ViewGroup.MarginLayoutParams) fab.getLayoutParams();

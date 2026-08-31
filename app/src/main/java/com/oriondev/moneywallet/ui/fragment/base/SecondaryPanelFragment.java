@@ -32,6 +32,7 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.oriondev.moneywallet.R;
+import com.oriondev.moneywallet.ui.activity.base.ThemedActivity;
 import com.oriondev.moneywallet.utils.Utils;
 
 /**
@@ -83,6 +84,9 @@ public abstract class SecondaryPanelFragment extends Fragment implements Toolbar
             }
         }
         mIsCreated = true;
+        if (getActivity() instanceof ThemedActivity) {
+            ((ThemedActivity) getActivity()).applySystemBarInsets();
+        }
         return view;
     }
 
