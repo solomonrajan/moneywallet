@@ -1,7 +1,7 @@
 {
   "repository": {
-    "code_url": "https://github.com/herrerad85/moneywallet",
-    "issue_url": "https://github.com/herrerad85/moneywallet/issues"
+    "code_url": "https://github.com/solomonrajan/moneywallet",
+    "issue_url": "https://github.com/solomonrajan/moneywallet/issues"
   },
   "other_info": [
     {
@@ -9,18 +9,23 @@
       "items": [
         {
           "icon": "ic_perm_identity_black_24dp",
-          "title": "Andrea Alemani",
-          "subtitle": "Original author",
-          "link": "https://github.com/AndreAle94"
+          "title": "Solomon Rajan",
+          "subtitle": "Fork maintainer (Cash Ledger)",
+          "link": "https://github.com/solomonrajan"
         },{
           "icon": "ic_perm_identity_black_24dp",
           "title": "herrerad85",
-          "subtitle": "Fork maintainer",
+          "subtitle": "Fork maintainer (Tallybook)",
           "link": "https://github.com/herrerad85"
+        },{
+          "icon": "ic_perm_identity_black_24dp",
+          "title": "Andrea Alemani",
+          "subtitle": "Original author (MoneyWallet)",
+          "link": "https://github.com/AndreAle94"
         },{
           "icon": "ic_github_circle_black_24dp",
           "title_resource": "about_hint_fork",
-          "link": "https://github.com/herrerad85/moneywallet"
+          "link": "https://github.com/solomonrajan/moneywallet"
         }
       ]
     },{
