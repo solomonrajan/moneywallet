@@ -137,6 +137,7 @@ public class MainActivity extends BaseActivity implements DrawerController, Acco
     private void initializeUi() {
         setContentView(R.layout.activity_root_container);
         initializeNavigationDrawer();
+        applySystemBarInsets();
     }
 
     /**

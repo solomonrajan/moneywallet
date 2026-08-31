@@ -178,7 +178,7 @@ public abstract class ThemedActivity extends AppCompatActivity implements ThemeE
         applySystemBarInsets();
     }
 
-    private void applySystemBarInsets() {
+    public void applySystemBarInsets() {
         final View content = findViewById(android.R.id.content);
         if (content == null) {
             return;
@@ -198,9 +198,33 @@ public abstract class ThemedActivity extends AppCompatActivity implements ThemeE
                 right = insets.getSystemWindowInsetRight();
                 bottom = insets.getSystemWindowInsetBottom();
             }
-            view.setPadding(left, top, right, bottom);
-            setStatusBarScrimBounds(left, top, right);
-            return insets.consumeSystemWindowInsets();
+
+            View appBar = findViewById(R.id.app_bar_container);
+            if (appBar == null) {
+                appBar = findViewById(R.id.primary_app_bar_container);
+            }
+            if (appBar == null) {
+                appBar = findViewById(R.id.primary_toolbar);
+            }
+
+            if (appBar != null) {
+                appBar.setPadding(appBar.getPaddingLeft(), top, appBar.getPaddingRight(), appBar.getPaddingBottom());
+                view.setPadding(left, 0, right, bottom);
+            } else {
+                view.setPadding(left, top, right, bottom);
+                setStatusBarScrimBounds(left, top, right);
+            }
+
+            View fab = findViewById(R.id.floating_action_button);
+            if (fab != null && fab.getLayoutParams() instanceof ViewGroup.MarginLayoutParams) {
+                ViewGroup.MarginLayoutParams lp = (ViewGroup.MarginLayoutParams) fab.getLayoutParams();
+                int defaultMargin = getResources().getDimensionPixelSize(R.dimen.fragment_multi_panel_fab_margin);
+                lp.bottomMargin = defaultMargin + bottom;
+                lp.rightMargin = defaultMargin + right;
+                fab.setLayoutParams(lp);
+            }
+
+            return insets;
         });
         content.requestApplyInsets();
     }
