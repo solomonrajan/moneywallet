@@ -69,6 +69,27 @@ public abstract class ThemedActivity extends AppCompatActivity implements ThemeE
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         ThemeEngine.registerObserver(this);
+        enableEdgeToEdge();
+    }
+
+    private void enableEdgeToEdge() {
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.R) {
+            getWindow().setDecorFitsSystemWindows(false);
+        } else if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+            View decorView = getWindow().getDecorView();
+            decorView.setSystemUiVisibility(
+                    decorView.getSystemUiVisibility()
+                            | View.SYSTEM_UI_FLAG_LAYOUT_STABLE
+                            | View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN
+                            | View.SYSTEM_UI_FLAG_LAYOUT_HIDE_NAVIGATION);
+        }
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+            getWindow().setStatusBarColor(android.graphics.Color.TRANSPARENT);
+            getWindow().setNavigationBarColor(android.graphics.Color.TRANSPARENT);
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.Q) {
+                getWindow().setNavigationBarContrastEnforced(false);
+            }
+        }
     }
 
     /**
@@ -158,19 +179,28 @@ public abstract class ThemedActivity extends AppCompatActivity implements ThemeE
     }
 
     private void applySystemBarInsets() {
-        if (Build.VERSION.SDK_INT < Build.VERSION_CODES.VANILLA_ICE_CREAM) {
-            return;
-        }
         final View content = findViewById(android.R.id.content);
         if (content == null) {
             return;
         }
         content.setOnApplyWindowInsetsListener((view, insets) -> {
-            Insets bars = insets.getInsets(WindowInsets.Type.systemBars()
-                    | WindowInsets.Type.displayCutout());
-            view.setPadding(bars.left, bars.top, bars.right, bars.bottom);
-            setStatusBarScrimBounds(bars);
-            return WindowInsets.CONSUMED;
+            int left, top, right, bottom;
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.R) {
+                Insets bars = insets.getInsets(WindowInsets.Type.systemBars()
+                        | WindowInsets.Type.displayCutout());
+                left = bars.left;
+                top = bars.top;
+                right = bars.right;
+                bottom = bars.bottom;
+            } else {
+                left = insets.getSystemWindowInsetLeft();
+                top = insets.getSystemWindowInsetTop();
+                right = insets.getSystemWindowInsetRight();
+                bottom = insets.getSystemWindowInsetBottom();
+            }
+            view.setPadding(left, top, right, bottom);
+            setStatusBarScrimBounds(left, top, right);
+            return insets.consumeSystemWindowInsets();
         });
         content.requestApplyInsets();
     }
@@ -182,8 +212,7 @@ public abstract class ThemedActivity extends AppCompatActivity implements ThemeE
      * over the navigation drawer the way the platform's own status bar tint used to sit over it.
      * <p>
      * Its bounds come from the insets, so it is zero high where the bar takes no space, and the
-     * color comes from onThemeStatusBarScrim. Below API 35 nothing here runs, the platform still
-     * paints the bar from setStatusBarColor, and on the main screen the drawer paints its own.
+     * color comes from onThemeStatusBarScrim.
      */
     private View getStatusBarScrim() {
         if (mStatusBarScrim == null) {
@@ -205,17 +234,17 @@ public abstract class ThemedActivity extends AppCompatActivity implements ThemeE
      * away from the curve or the notch, and a band run to the full window width would overhang
      * that letterbox and leave a window background sliver under a colored bar.
      */
-    private void setStatusBarScrimBounds(Insets bars) {
+    private void setStatusBarScrimBounds(int left, int top, int right) {
         View scrim = getStatusBarScrim();
         if (scrim == null) {
             return;
         }
         FrameLayout.LayoutParams params = (FrameLayout.LayoutParams) scrim.getLayoutParams();
-        if (params.height != bars.top || params.leftMargin != bars.left
-                || params.rightMargin != bars.right) {
-            params.height = bars.top;
-            params.leftMargin = bars.left;
-            params.rightMargin = bars.right;
+        if (params.height != top || params.leftMargin != left
+                || params.rightMargin != right) {
+            params.height = top;
+            params.leftMargin = left;
+            params.rightMargin = right;
             scrim.setLayoutParams(params);
         }
     }
@@ -254,7 +283,11 @@ public abstract class ThemedActivity extends AppCompatActivity implements ThemeE
 
     protected void onThemeStatusBar(ITheme theme) {
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
-            getWindow().setStatusBarColor(theme.getColorPrimaryDark());
+            getWindow().setStatusBarColor(android.graphics.Color.TRANSPARENT);
+            getWindow().setNavigationBarColor(android.graphics.Color.TRANSPARENT);
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.Q) {
+                getWindow().setNavigationBarContrastEnforced(false);
+            }
         }
     }
 
@@ -264,11 +297,9 @@ public abstract class ThemedActivity extends AppCompatActivity implements ThemeE
      * painted on every screen, that one included.
      */
     protected void onThemeStatusBarScrim(ITheme theme) {
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.VANILLA_ICE_CREAM) {
-            View scrim = getStatusBarScrim();
-            if (scrim != null) {
-                scrim.setBackgroundColor(theme.getColorPrimaryDark());
-            }
+        View scrim = getStatusBarScrim();
+        if (scrim != null) {
+            scrim.setBackgroundColor(theme.getColorPrimaryDark());
         }
     }
 
