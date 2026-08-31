@@ -8,7 +8,7 @@
   <a href="https://www.gnu.org/licenses/gpl-3.0.html"><img src="https://img.shields.io/badge/License-GPLv3-blue.svg?style=for-the-badge" alt="License: GPLv3" /></a>
   <a href="https://f-droid.org/packages/io.github.herrerad85.tallybook/"><img src="https://img.shields.io/f-droid/v/io.github.herrerad85.tallybook.svg?style=for-the-badge&logo=fdroid" alt="F-Droid (Tallybook)" /></a>
   <a href="https://github.com/solomonrajan/moneywallet/releases"><img src="https://img.shields.io/github/v/release/solomonrajan/moneywallet?style=for-the-badge&logo=github&color=success" alt="GitHub Release" /></a>
-  <img src="https://img.shields.io/badge/Platform-Android%2014%2B%20%7C%2015-green?style=for-the-badge&logo=android" alt="Android" />
+  <img src="https://img.shields.io/badge/Platform-Android%2015%20(API%2035)-green?style=for-the-badge&logo=android" alt="Android 15 (API 35)" />
 </p>
 
 **Cash Ledger** is a private, offline-first expense and budget manager for Android. Take full control of your personal finances with multiple wallets, custom categories, smart budgets, recurring transactions, multi-currency support, detailed reports, and biometric security — with zero accounts, no tracking, and complete data ownership.
@@ -138,7 +138,7 @@ A row the importer cannot read stops the process before saving, clearly naming t
   - Home screen widget for live wallet balance display.
   - Multi-category budgets & subcategory Overview breakdowns.
   - 73 new category icons and modernized edge-to-edge UI.
-  - Android 14/15 system bar theme colors and scoped storage stability.
+  - Android 15 base compatibility with edge-to-edge system bars and scoped storage stability.
   - WebDAV self-hosted cloud backup and restore.
 - 🎯 **Roadmap**: Open features and proposals are tracked in [Roadmap Issue #15](https://github.com/herrerad85/moneywallet/issues/15).
 
