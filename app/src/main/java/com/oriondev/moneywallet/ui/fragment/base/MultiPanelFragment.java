@@ -51,6 +51,7 @@ import com.oriondev.moneywallet.storage.preference.CurrentWalletController;
 import com.oriondev.moneywallet.storage.preference.PreferenceManager;
 import com.oriondev.moneywallet.ui.activity.DrawerController;
 import com.oriondev.moneywallet.ui.activity.ToolbarController;
+import com.oriondev.moneywallet.ui.activity.base.ThemedActivity;
 import com.oriondev.moneywallet.utils.Utils;
 
 /**
