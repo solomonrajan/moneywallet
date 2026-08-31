@@ -152,7 +152,7 @@ public class MainActivity extends BaseActivity implements DrawerController, Acco
         mDrawer = new DrawerBuilder()
                 .withActivity(this)
                 .withAccountHeader(mAccountHeader)
-                .withTranslucentStatusBar(false)
+                .withTranslucentStatusBar(true)
                 .addDrawerItems(
                         createDrawerItem(ID_SECTION_TRANSACTIONS, R.drawable.ic_shopping_cart_24dp, R.string.menu_transaction),
                         createDrawerItem(ID_SECTION_CATEGORIES, R.drawable.ic_table_large_24dp, R.string.menu_category),
