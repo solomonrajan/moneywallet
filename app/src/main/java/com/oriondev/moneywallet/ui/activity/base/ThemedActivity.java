@@ -86,6 +86,7 @@ public abstract class ThemedActivity extends AppCompatActivity implements ThemeE
             getWindow().setNavigationBarColor(android.graphics.Color.TRANSPARENT);
             if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.Q) {
                 getWindow().setNavigationBarContrastEnforced(false);
+                getWindow().setStatusBarContrastEnforced(false);
             }
         }
     }
@@ -264,6 +265,7 @@ public abstract class ThemedActivity extends AppCompatActivity implements ThemeE
             getWindow().setNavigationBarColor(android.graphics.Color.TRANSPARENT);
             if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.Q) {
                 getWindow().setNavigationBarContrastEnforced(false);
+                getWindow().setStatusBarContrastEnforced(false);
             }
         }
     }

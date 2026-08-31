@@ -86,6 +86,7 @@ public class TutorialActivity extends AppIntro2 {
             getWindow().setNavigationBarColor(Color.TRANSPARENT);
             if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.Q) {
                 getWindow().setNavigationBarContrastEnforced(false);
+                getWindow().setStatusBarContrastEnforced(false);
             }
         }
     }
