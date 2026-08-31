@@ -200,7 +200,7 @@ public abstract class ThemedActivity extends AppCompatActivity implements ThemeE
 
             if (appBar != null) {
                 appBar.setPadding(appBar.getPaddingLeft(), top, appBar.getPaddingRight(), appBar.getPaddingBottom());
-                view.setPadding(left, 0, right, bottom);
+                view.setPadding(0, 0, 0, 0);
             } else {
                 view.setPadding(left, top, right, bottom);
             }
