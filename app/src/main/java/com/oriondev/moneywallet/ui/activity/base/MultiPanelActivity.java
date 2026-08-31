@@ -50,7 +50,6 @@ public abstract class MultiPanelActivity extends BaseActivity implements Toolbar
                     .replace(R.id.fragment_container, mFragment, tag)
                     .commit();
         }
-        applySystemBarInsets();
     }
 
     protected abstract MultiPanelFragment onCreateMultiPanelFragment();

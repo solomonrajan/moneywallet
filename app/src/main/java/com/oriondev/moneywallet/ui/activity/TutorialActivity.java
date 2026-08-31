@@ -59,7 +59,6 @@ public class TutorialActivity extends AppIntro2 {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        enableEdgeToEdge();
         addSlide(R.drawable.ic_intro_slide_1, R.string.activity_intro_title_slide_1, R.string.activity_intro_description_slide_1, Color.parseColor("#76bec0"));
         addSlide(R.drawable.ic_intro_slide_2, R.string.activity_intro_title_slide_2, R.string.activity_intro_description_slide_2, Color.parseColor("#8464a9"));
         addSlide(R.drawable.ic_intro_slide_3, R.string.activity_intro_title_slide_3, R.string.activity_intro_description_slide_3, Color.parseColor("#19beed"));
@@ -70,51 +69,23 @@ public class TutorialActivity extends AppIntro2 {
         applySystemBarInsets();
     }
 
-    private void enableEdgeToEdge() {
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.R) {
-            getWindow().setDecorFitsSystemWindows(false);
-        } else if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
-            View decorView = getWindow().getDecorView();
-            decorView.setSystemUiVisibility(
-                    decorView.getSystemUiVisibility()
-                            | View.SYSTEM_UI_FLAG_LAYOUT_STABLE
-                            | View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN
-                            | View.SYSTEM_UI_FLAG_LAYOUT_HIDE_NAVIGATION);
-        }
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
-            getWindow().setStatusBarColor(Color.TRANSPARENT);
-            getWindow().setNavigationBarColor(Color.TRANSPARENT);
-            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.Q) {
-                getWindow().setNavigationBarContrastEnforced(false);
-            }
-        }
-    }
-
     // This intro screen does not go through ThemedActivity (it extends the AppIntro base class), so it
-    // needs its own edge to edge handling, otherwise the bottom navigation with the Next and Done actions
-    // sits under the navigation bar. Pad the content with the system bar and display cutout insets.
+    // needs its own edge to edge handling on Android 15 (API 35), otherwise the bottom navigation with
+    // the Next and Done actions sits under the navigation bar. Pad the content with the system bar and
+    // display cutout insets so those controls stay reachable.
     private void applySystemBarInsets() {
+        if (Build.VERSION.SDK_INT < Build.VERSION_CODES.VANILLA_ICE_CREAM) {
+            return;
+        }
         final View content = findViewById(android.R.id.content);
         if (content == null) {
             return;
         }
         content.setOnApplyWindowInsetsListener((view, insets) -> {
-            int left, top, right, bottom;
-            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.R) {
-                Insets bars = insets.getInsets(WindowInsets.Type.systemBars()
-                        | WindowInsets.Type.displayCutout());
-                left = bars.left;
-                top = bars.top;
-                right = bars.right;
-                bottom = bars.bottom;
-            } else {
-                left = insets.getSystemWindowInsetLeft();
-                top = insets.getSystemWindowInsetTop();
-                right = insets.getSystemWindowInsetRight();
-                bottom = insets.getSystemWindowInsetBottom();
-            }
-            view.setPadding(left, top, right, bottom);
-            return insets.consumeSystemWindowInsets();
+            Insets bars = insets.getInsets(WindowInsets.Type.systemBars()
+                    | WindowInsets.Type.displayCutout());
+            view.setPadding(bars.left, bars.top, bars.right, bars.bottom);
+            return WindowInsets.CONSUMED;
         });
         content.requestApplyInsets();
     }

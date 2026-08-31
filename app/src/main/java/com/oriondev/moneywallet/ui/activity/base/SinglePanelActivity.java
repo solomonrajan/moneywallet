@@ -51,7 +51,6 @@ public abstract class SinglePanelActivity extends BaseActivity implements Toolba
         onSetupFloatingActionButton(mFloatingActionButton);
         onViewCreated(savedInstanceState);
         setupToolbar();
-        applySystemBarInsets();
     }
 
     protected void onInflateRootLayout() {
