@@ -133,13 +133,13 @@ A row the importer cannot read stops the process before saving, clearly naming t
 
 ## 🗺️ Roadmap & Status
 
-- 📌 **Current Version**: **`1.0.0`**
-- 🌟 **Recent Updates**:
-  - Home screen widget for live wallet balance display.
-  - Multi-category budgets & subcategory Overview breakdowns.
-  - 73 new category icons and modernized edge-to-edge UI.
-  - Android 15 base compatibility with edge-to-edge system bars and scoped storage stability.
-  - WebDAV self-hosted cloud backup and restore.
+- 📌 **Current Version**: **`1.0.1`**
+- 🌟 **Recent Updates in `v1.0.1` (vs `v1.0.0`)**:
+  - **Android 15 Base Compatibility**: Upgraded `minSdk` to 35, aligning base and target platforms with Android 15.
+  - **Universal Edge-to-Edge**: Enabled edge-to-edge drawing across all 39 app screens and tutorial intro with transparent system bars.
+  - **Safe Area Insets & Dynamic Scrim**: Applied content insets and reactive top status bar scrim to prevent UI overlaps and improve visual hierarchy.
+  - **Adaptive Icon Contrast**: Added light and dark icon appearance switching matching theme primary colors.
+  - **Community & Vibe Coding Note**: Added friendly open-source disclaimer and invitation for feedback.
 - 🎯 **Roadmap**: Open features and proposals are tracked in [Roadmap Issue #15](https://github.com/herrerad85/moneywallet/issues/15).
 
 ---

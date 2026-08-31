@@ -1,0 +1,6 @@
+Cash Ledger v1.0.0 Initial Release:
+
+- First official release of Cash Ledger (fork of MoneyWallet) under package io.github.solomonrajan.cashledger.
+- Modernized UI branding, custom theme engine, and updated documentation.
+- Automated cryptographic keystore signing and GitHub release workflow.
+- Home screen widget, multi-category budgets, 73 category icons, and WebDAV cloud sync.

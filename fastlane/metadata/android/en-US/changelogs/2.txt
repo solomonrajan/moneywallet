@@ -1,0 +1,6 @@
+Cash Ledger v1.0.1 Release:
+
+- Base Compatibility: Elevated platform base to Android 15 (minSdk 35 & targetSdk 35).
+- Edge-to-Edge Experience: Implemented universal edge-to-edge layout, transparent system bars, and dynamic status bar scrim across all screens.
+- Safe Area Insets: Applied system bar and cutout insets to prevent toolbars, navigation buttons, and floating action buttons from overlapping system UI.
+- Adaptive System Bar Icons: Contrast-aware light and dark icon coloring for status and navigation bars.

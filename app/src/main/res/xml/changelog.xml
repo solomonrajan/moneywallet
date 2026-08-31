@@ -20,6 +20,19 @@
 
 <changelog>
 
+    <version versionName="1.0.1" versionDate="Aug 31, 2026">
+        <change>[b]Base Compatibility:[/b] Elevated app base platform to Android 15 (minSdk 35 &amp; targetSdk 35).</change>
+        <change>[b]Edge-to-Edge Experience:[/b] Implemented full edge-to-edge layout, transparent system bars, and dynamic status bar scrim across all screens.</change>
+        <change>[b]Safe Area Insets:[/b] Applied system bar and cutout insets to prevent toolbars, navigation items, and floating action buttons from overlapping system UI.</change>
+        <change>[b]Adaptive System Bar Icons:[/b] Added contrast-aware light and dark icon coloring for status and navigation bars matching current theme.</change>
+    </version>
+
+    <version versionName="1.0.0" versionDate="Aug 31, 2026">
+        <change>[b]Initial Release:[/b] First official release of Cash Ledger (fork of MoneyWallet) under package io.github.solomonrajan.cashledger.</change>
+        <change>[b]Branding &amp; Identity:[/b] Modernized UI branding, custom theme engine, and updated documentation.</change>
+        <change>[b]Release Pipeline:[/b] Configured automated cryptographic keystore signing and GitHub release workflow.</change>
+    </version>
+
     <version versionName="1.7.0" versionDate="Aug 30, 2026">
         <change>[b]New![/b] A home screen widget that shows one wallet's balance.</change>
         <change>[b]New![/b] A budget can cover more than one category.</change>
