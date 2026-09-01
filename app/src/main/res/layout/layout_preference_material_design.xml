@@ -18,60 +18,64 @@
   ~ along with MoneyWallet.  If not, see <http://www.gnu.org/licenses/>.
   -->
 
-<LinearLayout
+<androidx.constraintlayout.widget.ConstraintLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:minHeight="?android:attr/listPreferredItemHeight"
-    android:gravity="center_vertical"
     android:paddingRight="?android:attr/scrollbarSize"
     android:paddingEnd="?android:attr/scrollbarSize"
-    android:baselineAligned="false"
     tools:ignore="RtlSymmetry">
 
-    <RelativeLayout
+    <com.oriondev.moneywallet.ui.view.theme.ThemedTextView
+        android:id="@android:id/title"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="16dip"
-        android:layout_marginStart="16dip"
-        android:layout_marginRight="6dip"
-        android:layout_marginEnd="6dip"
-        android:layout_marginTop="12dip"
-        android:layout_marginBottom="12dip"
-        android:layout_weight="1">
+        android:layout_marginStart="16dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginTop="12dp"
+        android:singleLine="true"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:ellipsize="marquee"
+        android:fadingEdge="horizontal"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toStartOf="@android:id/widget_frame"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toTopOf="@android:id/summary"
+        app:layout_constraintVertical_chainStyle="packed"
+        app:theme_textColor="textColorPrimary" />
 
-        <com.oriondev.moneywallet.ui.view.theme.ThemedTextView
-            android:id="@android:id/title"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:singleLine="true"
-            android:textAppearance="?android:attr/textAppearanceMedium"
-            android:ellipsize="marquee"
-            android:fadingEdge="horizontal"
-            app:theme_textColor="textColorPrimary" />
-
-        <com.oriondev.moneywallet.ui.view.theme.ThemedTextView
-            android:id="@android:id/summary"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@android:id/title"
-            android:layout_alignLeft="@android:id/title"
-            android:layout_alignStart="@android:id/title"
-            android:textAppearance="?android:attr/textAppearanceSmall"
-            android:maxLines="4"
-            android:layout_marginTop="2dp"
-            app:theme_textColor="textColorSecondary" />
-
-    </RelativeLayout>
+    <com.oriondev.moneywallet.ui.view.theme.ThemedTextView
+        android:id="@android:id/summary"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginTop="2dp"
+        android:layout_marginBottom="12dp"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:maxLines="4"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toStartOf="@android:id/widget_frame"
+        app:layout_constraintTop_toBottomOf="@android:id/title"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:theme_textColor="textColorSecondary" />
 
     <!-- Preference should place its actual preference widget here. -->
     <LinearLayout
         android:id="@android:id/widget_frame"
         android:layout_width="wrap_content"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
         android:gravity="center_vertical"
-        android:orientation="vertical" />
+        android:orientation="vertical"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent" />
 
-</LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
