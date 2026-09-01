@@ -41,93 +41,96 @@ public class ThemeEngine implements ITheme {
     private static final String COLOR_ACCENT = "color_accent";
     private static final String MODE = "mode";
 
-    private static final int DEFAULT_COLOR_PRIMARY = Color.parseColor("#3f51b5");
-    private static final int DEFAULT_COLOR_PRIMARY_DARK = Color.parseColor("#303F9F");
-    private static final int DEFAULT_COLOR_ACCENT = Color.parseColor("#FF4081");
+    // Material Design 3 Baseline Color Palette
+    private static final int DEFAULT_COLOR_PRIMARY = Color.parseColor("#6750A4");
+    private static final int DEFAULT_COLOR_PRIMARY_DARK = Color.parseColor("#4F378B");
+    private static final int DEFAULT_COLOR_ACCENT = Color.parseColor("#7D5260");
     private static final Mode DEFAULT_MODE = Mode.LIGHT;
 
+    // Material Design 3 On-Surface Typography Roles [Light, Dark, Deep Dark (AMOLED)]
     private static final int[] DEFAULT_TEXT_COLOR_PRIMARY = new int[] {
-            Color.parseColor("#DE000000"), // OK
-            Color.parseColor("#FFFFFFFF"), // OK
-            Color.parseColor("#FFFFFFFF")  // OK
+            Color.parseColor("#1D1B20"), // M3 Light On-Surface
+            Color.parseColor("#E6E1E5"), // M3 Dark On-Surface
+            Color.parseColor("#E6E1E5")  // M3 AMOLED On-Surface
     };
 
     private static final int[] DEFAULT_TEXT_COLOR_PRIMARY_INVERSE = new int[] {
-            Color.parseColor("#DEFFFFFF"), // OK
-            Color.parseColor("#FF000000"), // OK
-            Color.parseColor("#FF000000")  // OK
+            Color.parseColor("#E6E1E5"),
+            Color.parseColor("#1D1B20"),
+            Color.parseColor("#1D1B20")
     };
 
     private static final int[] DEFAULT_TEXT_COLOR_SECONDARY = new int[] {
-            Color.parseColor("#8A000000"), // OK
-            Color.parseColor("#B3FFFFFF"), // OK
-            Color.parseColor("#B3FFFFFF")  // OK
+            Color.parseColor("#49454F"), // M3 Light On-Surface-Variant
+            Color.parseColor("#CAC4D0"), // M3 Dark On-Surface-Variant
+            Color.parseColor("#CAC4D0")  // M3 AMOLED On-Surface-Variant
     };
 
     private static final int[] DEFAULT_TEXT_COLOR_SECONDARY_INVERSE = new int[] {
-            Color.parseColor("#8AFFFFFF"), // OK
-            Color.parseColor("#B3000000"), // OK
-            Color.parseColor("#B3000000")
+            Color.parseColor("#CAC4D0"),
+            Color.parseColor("#49454F"),
+            Color.parseColor("#49454F")
     };
 
     private static final int[] DEFAULT_ICON_COLOR = new int[] {
-            Color.parseColor("#8A000000"), // OK
-            Color.parseColor("#8AFFFFFF"), // OK
-            Color.parseColor("#8AFFFFFF")  // OK
+            Color.parseColor("#49454F"), // M3 Light Icon (On-Surface-Variant)
+            Color.parseColor("#CAC4D0"), // M3 Dark Icon
+            Color.parseColor("#CAC4D0")  // M3 AMOLED Icon
     };
 
     private static final int[] DEFAULT_HINT_TEXT_COLOR = new int[] {
-            Color.parseColor("#61000000"), // OK
-            Color.parseColor("#80FFFFFF"), // OK
-            Color.parseColor("#80FFFFFF")  // OK
+            Color.parseColor("#79747E"), // M3 Outline
+            Color.parseColor("#938F99"), // M3 Dark Outline
+            Color.parseColor("#938F99")
     };
 
+    // Material Design 3 Surfaces and Containers
     private static final int[] DEFAULT_COLOR_CARD_BACKGROUND = new int[] {
-            Color.parseColor("#FFFFFF"), // OK
-            Color.parseColor("#424242"), // OK
-            Color.parseColor("#424242")  // OK
+            Color.parseColor("#FFFFFF"), // M3 Light Card
+            Color.parseColor("#2B2930"), // M3 Dark Surface Container High
+            Color.parseColor("#1D1B20")  // M3 AMOLED Surface Container Low
     };
 
     private static final int[] DEFAULT_COLOR_WINDOW_FOREGROUND = new int[] {
-            Color.parseColor("#FFFFFF"), // OK
-            Color.parseColor("#303030"), // OK
-            Color.parseColor("#000000")  // OK
+            Color.parseColor("#F3EDF7"), // M3 Light Surface Container
+            Color.parseColor("#211F26"), // M3 Dark Surface Container
+            Color.parseColor("#141218")  // M3 AMOLED Surface
     };
 
     private static final int[] DEFAULT_COLOR_WINDOW_BACKGROUND = new int[] {
-            Color.parseColor("#FAFAFA"), // OK
-            Color.parseColor("#212121"), // OK
-            Color.parseColor("#212121")  // OK
+            Color.parseColor("#FEF7FF"), // M3 Light Surface
+            Color.parseColor("#141218"), // M3 Dark Surface
+            Color.parseColor("#000000")  // AMOLED Pure Black
     };
 
     private static final int[] DEFAULT_COLOR_RIPPLE = new int[] {
-            Color.parseColor("#1f000000"), // OK
-            Color.parseColor("#33ffffff"), // OK
-            Color.parseColor("#33ffffff") // OK
+            Color.parseColor("#1f1d1b20"), // M3 Ripple Light
+            Color.parseColor("#26e6e1e5"), // M3 Ripple Dark
+            Color.parseColor("#26e6e1e5")  // M3 Ripple AMOLED
     };
 
     private static final int[] DRAWER_BACKGROUND_COLOR = new int[] {
-            Color.parseColor("#F9F9F9"),
-            Color.parseColor("#303030"),
-            Color.parseColor("#303030")
+            Color.parseColor("#F7F2FA"), // M3 Surface Container Low
+            Color.parseColor("#211F26"), // M3 Dark Surface Container
+            Color.parseColor("#141218")
     };
 
     private static final int[] DRAWER_ICON_COLOR = new int[] {
-            Color.parseColor("#8A000000"),
-            Color.parseColor("#8AFFFFFF"),
-            Color.parseColor("#8AFFFFFF")
+            Color.parseColor("#49454F"), // M3 On-Surface-Variant
+            Color.parseColor("#CAC4D0"),
+            Color.parseColor("#CAC4D0")
     };
 
     private static final int[] DRAWER_TEXT_COLOR = new int[] {
-            Color.parseColor("#DE000000"),
-            Color.parseColor("#DEFFFFFF"),
-            Color.parseColor("#DEFFFFFF")
+            Color.parseColor("#1D1B20"), // M3 On-Surface
+            Color.parseColor("#E6E1E5"),
+            Color.parseColor("#E6E1E5")
     };
 
     private static final int[] DRAWER_SELECTED_ITEM_COLOR = new int[] {
-            Color.parseColor("#E8E8E8"),
-            Color.parseColor("#202020"),
-            Color.parseColor("#202020")
+            Color.parseColor("#E8DEF8"), // M3 Secondary Container
+            Color.parseColor("#4A4458"), // M3 Dark Secondary Container
+            Color.parseColor("#36343B")
     };
 
     private static final int INDEX_MODE_LIGHT = 0;

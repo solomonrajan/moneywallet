@@ -193,4 +193,21 @@
 
     <dimen name="view_recurrence_picker_padding">8dp</dimen>
 
+    <!-- Material Design 3 Shape Tokens -->
+    <dimen name="m3_shape_corner_none">0dp</dimen>
+    <dimen name="m3_shape_corner_extra_small">4dp</dimen>
+    <dimen name="m3_shape_corner_small">8dp</dimen>
+    <dimen name="m3_shape_corner_medium">12dp</dimen>
+    <dimen name="m3_shape_corner_large">16dp</dimen>
+    <dimen name="m3_shape_corner_extra_large">28dp</dimen>
+    <dimen name="m3_shape_corner_full">9999dp</dimen>
+
+    <!-- Material Design 3 Component Specifications -->
+    <dimen name="m3_card_corner_radius">12dp</dimen>
+    <dimen name="m3_card_elevation">1dp</dimen>
+    <dimen name="m3_card_max_elevation">3dp</dimen>
+    <dimen name="m3_dialog_corner_radius">28dp</dimen>
+    <dimen name="m3_button_corner_radius">20dp</dimen>
+    <dimen name="m3_fab_corner_radius">16dp</dimen>
+
 </resources>

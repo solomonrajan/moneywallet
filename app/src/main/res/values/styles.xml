@@ -25,6 +25,20 @@
         <item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorAccent">@color/colorAccent</item>
+
+        <!-- Material Design 3 Color Roles -->
+        <item name="colorSurface">@color/colorSurface</item>
+        <item name="colorOnSurface">@color/colorOnSurface</item>
+        <item name="colorSurfaceVariant">@color/colorSurfaceVariant</item>
+        <item name="colorOnSurfaceVariant">@color/colorOnSurfaceVariant</item>
+        <item name="colorOutline">@color/colorOutline</item>
+        <item name="colorOutlineVariant">@color/colorOutlineVariant</item>
+        <item name="colorSecondary">@color/colorSecondary</item>
+        <item name="colorTertiary">@color/colorTertiary</item>
+
+        <!-- Material Design 3 Component Styles -->
+        <item name="cardViewStyle">@style/MoneyWallet.CardView</item>
+
         <item name="preferenceTheme">@style/PreferenceThemeOverlay</item>
         <item name="android:windowDrawsSystemBarBackgrounds">true</item>
         <item name="android:statusBarColor">@android:color/transparent</item>
@@ -33,6 +47,15 @@
         <item name="android:enforceNavigationBarContrast" tools:targetApi="q">false</item>
         <item name="android:windowTranslucentStatus">false</item>
         <item name="android:windowTranslucentNavigation">false</item>
+    </style>
+
+    <!-- Material Design 3 Card Style -->
+    <style name="MoneyWallet.CardView" parent="CardView">
+        <item name="cardCornerRadius">@dimen/m3_card_corner_radius</item>
+        <item name="cardElevation">@dimen/m3_card_elevation</item>
+        <item name="cardMaxElevation">@dimen/m3_card_max_elevation</item>
+        <item name="cardUseCompatPadding">false</item>
+        <item name="cardPreventCornerOverlap">true</item>
     </style>
 
 </resources>
