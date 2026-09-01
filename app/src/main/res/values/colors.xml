@@ -24,29 +24,7 @@
     <color name="colorPrimaryDark">#4F378B</color>
     <color name="colorAccent">#7D5260</color>
 
-    <color name="colorOnPrimary">#FFFFFF</color>
-    <color name="colorPrimaryContainer">#EADDFF</color>
-    <color name="colorOnPrimaryContainer">#21005D</color>
 
-    <color name="colorSecondary">#625B71</color>
-    <color name="colorOnSecondary">#FFFFFF</color>
-    <color name="colorSecondaryContainer">#E8DEF8</color>
-    <color name="colorOnSecondaryContainer">#1D192B</color>
-
-    <color name="colorTertiary">#7D5260</color>
-    <color name="colorOnTertiary">#FFFFFF</color>
-    <color name="colorTertiaryContainer">#FFD8E4</color>
-    <color name="colorOnTertiaryContainer">#31111D</color>
-
-    <color name="colorSurface">#FEF7FF</color>
-    <color name="colorOnSurface">#1D1B20</color>
-    <color name="colorSurfaceVariant">#E7E0EC</color>
-    <color name="colorOnSurfaceVariant">#49454F</color>
-    <color name="colorSurfaceContainer">#F3EDF7</color>
-    <color name="colorSurfaceContainerHigh">#ECE6F0</color>
-
-    <color name="colorOutline">#79747E</color>
-    <color name="colorOutlineVariant">#CAC4D0</color>
 
     <!-- Material Design 3 Typography Tokens -->
     <color name="textPrimary">#1D1B20</color>

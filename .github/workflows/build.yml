@@ -34,7 +34,10 @@ jobs:
         if: always()
         with:
           name: lint-report
-          path: app/build/reports/lint-results-flossOsmDebug.html
+          if-no-files-found: ignore
+          path: |
+            app/build/reports/lint-results*
+            app/build/reports/lint-results-flossOsmDebug.*
 
       # The unit tests run before lint, so a failing test is the most common red
       # run and the one with no lint report to upload. Keep its own report.
@@ -42,6 +45,7 @@ jobs:
         if: always()
         with:
           name: unit-test-report
+          if-no-files-found: ignore
           path: |
             app/build/reports/tests/testFlossOsmDebugUnitTest/**
             app/build/test-results/testFlossOsmDebugUnitTest/**
@@ -49,4 +53,5 @@ jobs:
       - uses: actions/upload-artifact@v7
         with:
           name: debug-apk
+          if-no-files-found: ignore
           path: app/build/outputs/apk/flossOsm/debug/*.apk
