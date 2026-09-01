@@ -194,9 +194,6 @@ public class ImportExportIntentService extends IntentService {
             }
             // close the exporter to flush and close all the open streams
             dataExporter.close();
-            // if no exception has been thrown so far, we can ask the exporter
-            // for the output file: we can pass the uri of this file inside the intent
-            // Uri resultUri = Uri.fromFile(dataExporter.getOutputFile());
             String authority = getPackageName() + ".storage.file";
             File outputFile = dataExporter.getOutputFile();
             Uri resultUri = FileProvider.getUriForFile(this, authority, outputFile);

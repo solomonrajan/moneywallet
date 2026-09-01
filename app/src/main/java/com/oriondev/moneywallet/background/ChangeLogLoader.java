@@ -83,9 +83,7 @@ public class ChangeLogLoader extends AbstractGenericLoader<List<ChangeLog>> {
                 eventType = parser.next();
             }
         } catch (XmlPullParserException e) {
-            // Log.e("ChangeLogLoader", "Exception while parsing change log xml file", e);
         } catch (IOException e) {
-            // Log.e("ChangeLogLoader", "I/O Exception while parsing change log xml file", e);
         }
         return changeLogs;
     }

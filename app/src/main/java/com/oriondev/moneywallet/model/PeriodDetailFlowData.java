@@ -29,7 +29,7 @@ import java.util.List;
 public class PeriodDetailFlowData {
 
     private final Money mTotalMoney;
-    // private final List<PieData> mPieDataList;
+
     private final List<PieData> mPieDataList;
     private final List<CategoryMoney> mCategoryMoneyList;
 
