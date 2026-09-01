@@ -194,6 +194,50 @@ public abstract class ThemedActivity extends AppCompatActivity implements ThemeE
                 bottom = insets.getSystemWindowInsetBottom();
             }
 
+            View appBar = findViewById(R.id.app_bar_container);
+            if (appBar == null) {
+                appBar = findViewById(R.id.primary_app_bar_container);
+            }
+            if (appBar == null) {
+                appBar = findViewById(R.id.primary_toolbar);
+            }
+
+            if (appBar != null) {
+                appBar.setPadding(appBar.getPaddingLeft(), top, appBar.getPaddingRight(), appBar.getPaddingBottom());
+            }
+
+            View secondaryAppBar = findViewById(R.id.header_secondary_panel_layout);
+            if (secondaryAppBar == null) {
+                secondaryAppBar = findViewById(R.id.secondary_toolbar);
+            }
+            if (secondaryAppBar != null) {
+                secondaryAppBar.setPadding(secondaryAppBar.getPaddingLeft(), top, secondaryAppBar.getPaddingRight(), secondaryAppBar.getPaddingBottom());
+            }
+
+            View primaryContainer = findViewById(R.id.primary_panel_container_frame_layout);
+            if (primaryContainer != null) {
+                primaryContainer.setPadding(primaryContainer.getPaddingLeft(), appBar == null ? top : 0, primaryContainer.getPaddingRight(), bottom);
+            }
+
+            View primaryBody = findViewById(R.id.primary_panel_body_container_frame_layout);
+            if (primaryBody != null) {
+                primaryBody.setPadding(primaryBody.getPaddingLeft(), 0, primaryBody.getPaddingRight(), bottom);
+            }
+
+            View secondaryPanel = findViewById(R.id.secondary_panel_frame_layout);
+            if (secondaryPanel != null) {
+                secondaryPanel.setPadding(secondaryPanel.getPaddingLeft(), 0, secondaryPanel.getPaddingRight(), bottom);
+            }
+
+            View pinLayout = findViewById(R.id.pin_layout);
+            if (pinLayout != null) pinLayout.setPadding(0, top, 0, bottom);
+
+            View sequenceLayout = findViewById(R.id.sequence_layout);
+            if (sequenceLayout != null) sequenceLayout.setPadding(0, top, 0, bottom);
+
+            View fingerprintLayout = findViewById(R.id.fingerprint_layout);
+            if (fingerprintLayout != null) fingerprintLayout.setPadding(0, top, 0, bottom);
+
             View fab = findViewById(R.id.floating_action_button);
             if (fab != null && fab.getLayoutParams() instanceof ViewGroup.MarginLayoutParams) {
                 ViewGroup.MarginLayoutParams lp = (ViewGroup.MarginLayoutParams) fab.getLayoutParams();
@@ -203,7 +247,11 @@ public abstract class ThemedActivity extends AppCompatActivity implements ThemeE
                 fab.setLayoutParams(lp);
             }
 
-            view.setPadding(0, 0, 0, 0);
+            if (appBar == null && primaryContainer == null && pinLayout == null && sequenceLayout == null && fingerprintLayout == null) {
+                view.setPadding(left, top, right, bottom);
+            } else {
+                view.setPadding(0, 0, 0, 0);
+            }
 
             return insets;
         });
