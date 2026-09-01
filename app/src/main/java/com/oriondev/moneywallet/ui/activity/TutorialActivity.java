@@ -114,7 +114,7 @@ public class TutorialActivity extends AppIntro2 {
                 right = insets.getSystemWindowInsetRight();
                 bottom = insets.getSystemWindowInsetBottom();
             }
-            view.setPadding(left, top, right, bottom);
+            view.setPadding(0, 0, 0, 0);
             return insets;
         });
         content.requestApplyInsets();
